@@ -2,7 +2,7 @@ szavak = []
 
 sms = open("2007május.txt", "r")
 for sor in sms:
-    sor = sor.strip().split()
+    sor = sor.strip()
     szavak.append(sor)
 print(szavak)
 
@@ -30,31 +30,90 @@ elif egyszo == 'w' and 'x' and 'y' and 'z':
 
 print("2.feladat")
 
-szo = input("Adjon meg egy szót: ")
+bevitel = input("Adjon meg egy szót: ")
 karakterek = []
 
-for i in szo:
-    if i == 'a' or 'b' or 'c':
+for i in bevitel:
+    if i in ['a', 'b', 'c']:
         karakterek.append("2")
         continue
-    if i == 'd' or 'e' or 'f':
+    if i in ['d', 'e', 'f']:
         karakterek.append("3")
         continue
-    if i == 'g' or 'h' or 'i':
+    if i in ['g', 'h', 'i']:
         karakterek.append("4")
         continue
-    if i == 'j' or 'bk' or 'cl':
+    if i in ['j', 'k', 'l']:
         karakterek.append("5")
         continue
-    if i == 'm' or 'n' or 'o':
+    if i in ['m', 'n', 'o']:
         karakterek.append("6")
         continue
-    if i == 'p' or 'q' or 'r' or 's':
+    if i in ['p', 'q', 'r', 's']:
         karakterek.append("7")
         continue
-    if i == 't' or 'u' or 'v':
+    if i in ['t', 'u', 'v']:
         karakterek.append("8")
         continue
-    if i == 'w' or 'x' or 'y' or 'z':
+    if i in ['w', 'x', 'y', 'z']:
         karakterek.append("9")
-print(karakterek)
+szamok = ''.join(karakterek)
+print(szamok)
+
+print("4.feladat")
+hoszu = []
+leghosszabb = 0
+for szo in szavak:
+    for i in szo:
+        if len(i) > leghosszabb:
+            leghosszabb = len(i)
+print(leghosszabb)
+
+
+print("5.feladat")
+rovidek = []
+
+for i in szavak:
+    if len(i) <= 5:
+        rovidek.append(i)
+print(rovidek)
+
+print("6.feladat")
+def karakter_szam(egyszo):
+    karakterek = []
+    for i in egyszo:
+        if i in ['a', 'b', 'c']:
+            karakterek.append("2")
+            continue
+        if i in ['d', 'e', 'f']:
+            karakterek.append("3")
+            continue
+        if i in ['g', 'h', 'i']:
+            karakterek.append("4")
+            continue
+        if i in ['j', 'k', 'l']:
+            karakterek.append("5")
+            continue
+        if i in ['m', 'n', 'o']:
+            karakterek.append("6")
+            continue
+        if i in ['p', 'q', 'r', 's']:
+            karakterek.append("7")
+            continue
+        if i in ['t', 'u', 'v']:
+            karakterek.append("8")
+            continue
+        if i in ['w', 'x', 'y', 'z']:
+            karakterek.append("9")
+    return ''.join(karakterek)
+
+szavazat = 'sziaszia'
+eredmeny = karakter_szam(szavazat)
+print(eredmeny)
+with open('kodok.txt', 'w') as fajl:
+    for szo in szavak:
+        karakter_szam_sor = f"{szo} {karakter_szam(szo)}\n"
+        fajl.write(karakter_szam_sor)
+
+for szo in szavak:
+    print(szo, karakter_szam(szo))
