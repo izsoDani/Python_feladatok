@@ -117,3 +117,7 @@ with open('kodok.txt', 'w') as fajl:
 
 for szo in szavak:
     print(szo, karakter_szam(szo))
+
+print("7.feladat")
+
+szamsor = 225
