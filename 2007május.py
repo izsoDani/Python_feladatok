@@ -156,3 +156,10 @@ for sorszam in ujlista:
 for kod, szavak in kodok_szavakkal.items():
     if len(szavak) > 1:
         print(f"{kod}: {' '.join(szavak)}")
+
+print("9.feladat")
+leghosszabb = 0
+for kod, szavak in kodok_szavakkal.items():
+    if len(szavak) > leghosszabb:
+        leghosszabb += (len(szavak))
+        print(f"{kod}: {(len(szavak))}")
