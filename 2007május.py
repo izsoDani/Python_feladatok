@@ -119,5 +119,15 @@ for szo in szavak:
     print(szo, karakter_szam(szo))
 
 print("7.feladat")
-
-szamsor = 225
+ujszavak = []
+szamesszo = []
+szamsor = input("Adjon meg egy a listában szereplő számot: ")
+for szo in szavak:
+    szoszam = {}
+    szoszam['szo'] = szo
+    szoszam['szam'] = karakter_szam(szo)
+    szamesszo.append(szoszam)
+    if szoszam['szam'] == szamsor:
+        ujszavak.append(szoszam['szo'])
+print(szamesszo)
+print(ujszavak)
