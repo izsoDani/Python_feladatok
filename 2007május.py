@@ -131,3 +131,28 @@ for szo in szavak:
         ujszavak.append(szoszam['szo'])
 print(szamesszo)
 print(ujszavak)
+
+print("8.feladat")
+
+ujlista = []
+
+for szo in szavak:
+    sorszam = {}
+    sorszam['szo'] = szo
+    sorszam['szam'] = karakter_szam(szo)
+    ujlista.append(sorszam)
+    #print(sorszam['szo'],":",sorszam['szam'])
+
+kodok_szavakkal = {}
+
+for sorszam in ujlista:
+    kod = sorszam['szam']
+    szo = sorszam['szo']
+    if kod in kodok_szavakkal:
+        kodok_szavakkal[kod].append(szo)
+    else:
+        kodok_szavakkal[kod] = [szo]
+
+for kod, szavak in kodok_szavakkal.items():
+    if len(szavak) > 1:
+        print(f"{kod}: {' '.join(szavak)}")
