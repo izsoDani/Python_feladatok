@@ -162,4 +162,4 @@ leghosszabb = 0
 for kod, szavak in kodok_szavakkal.items():
     if len(szavak) > leghosszabb:
         leghosszabb += (len(szavak))
-        print(f"{kod}: {(len(szavak))}")
+        print(f"{kod}: {len(szavak)}")
