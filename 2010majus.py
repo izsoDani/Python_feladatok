@@ -1,3 +1,4 @@
+import math
 ulohelyek = []
 
 fajl = open("2010majus.txt", "r")
@@ -38,3 +39,7 @@ for teljes in szemelyes:
     if int(teljes['leszall'])-int(teljes['felszall']) == 172:
         print(teljes['ulohely'])
 
+print("4.feladat")
+
+for fizetendo in szemelyes:
+    szemelyenkent = (math.ceil(int(fizetendo['leszall'])-int(fizetendo['felszall']))*71)
