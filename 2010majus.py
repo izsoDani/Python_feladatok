@@ -41,5 +41,36 @@ for teljes in szemelyes:
 
 print("4.feladat")
 
+fizetendo_osszeg = []
 for fizetendo in szemelyes:
     szemelyenkent = (math.ceil(int(fizetendo['leszall'])-int(fizetendo['felszall']))*71)
+    fizetendo_osszeg.append(szemelyenkent)
+fizetendo_osszeg = fizetendo_osszeg[1:]
+print(sum(fizetendo_osszeg),"Ft")
+
+print("5.feladat")
+
+szaz_hatvan_ot_le = 0
+szaz_hatvan_ot_fel = 0
+
+for szazhatvanot in szemelyes:
+    if szazhatvanot['leszall'] == "165":
+        szaz_hatvan_ot_le += 1
+    if szazhatvanot['felszall'] == "165":
+        szaz_hatvan_ot_fel += 1
+print(szaz_hatvan_ot_le,"leszallo volt és", szaz_hatvan_ot_fel,"felszállo")
+
+
+print("6.feladat")
+
+for megallok in szemelyes:
+    megallok['leszall']
+
+
+
+
+
+
+
+
+
