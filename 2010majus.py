@@ -63,8 +63,19 @@ print(szaz_hatvan_ot_le,"leszallo volt és", szaz_hatvan_ot_fel,"felszállo")
 
 print("6.feladat")
 
+osszes_megallo = []
+
 for megallok in szemelyes:
-    megallok['leszall']
+    if megallok['leszall'] not in osszes_megallo:
+        osszes_megallo.append(megallok['leszall'])
+    else:
+        pass
+print(len(osszes_megallo),"helyen állt meg a busz")
+
+print("7.feladat")
+
+
+
 
 
 
