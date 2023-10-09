@@ -63,7 +63,7 @@ legtobbek = []
 legtobbszav = 0
 legtobb_nber = ""
 legtobb_part = ""
-
+    
 for legjobb in szavazatok:
     if int(legjobb['szavazatok']) >= legtobbszav:
         legtobbszav = int(legjobb['szavazatok'])
