@@ -92,6 +92,6 @@ print("7.feladat")
 dij = 0
 
 for telefonszam in telekonyv:
-    if 7<= telefonszam['kezd_ora'] <=18:
+    if 7 <= telefonszam['kezd_ora'] <= 18:
         dij += (math.ceil((((telefonszam['bef_ora']*3600+telefonszam['bef_perc']*60+telefonszam['bef_mp'])-(telefonszam['kezd_ora']*3600+telefonszam['kezd_perc']*60+telefonszam['kezd_mp']))/60)))*30
 print("Csúcs időben összesen",dij,"Ft-ot kell fizetnie")
