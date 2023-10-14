@@ -14,6 +14,23 @@ print(autok)
 
 print("2.feladat")
 
-
 for ellenorzes in autok:
-    print((int(ellenorzes['ora'][-1])*3600 + int(ellenorzes['perc'][-1]*60) + int(ellenorzes['mp'][-1])) - (int(ellenorzes['ora'][0])*3600 + int(ellenorzes['perc'][0])*60 + int(ellenorzes['mp'][0])))
+    utolso_adat = autok[-1]
+    elso_adat = autok[0]
+    utolso_mp = int(utolso_adat['ora']) * 3600 + int(utolso_adat['perc']) * 60 + int(utolso_adat['mp'])
+    elso_mp = int(elso_adat['ora']) * 3600 + int(elso_adat['perc']) * 60 + int(elso_adat['mp'])
+    veg_mp = (utolso_mp - elso_mp) / 3600
+print(utolso_mp)
+print(elso_mp)
+print("Ennyi orat dolgozak a rendorok legalabb:",veg_mp)
+
+print("3.feladat")
+ellenorzes_ideje = 0
+mar_volt = []
+for ora_ell in autok:
+    if ora_ell['ora'] not in mar_volt:
+        mar_volt.append(ora_ell['ora'])
+        print(ora_ell['ora'], ora_ell['rendszam'])
+    else:
+        continue
+
